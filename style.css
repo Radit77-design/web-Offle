@@ -1187,6 +1187,63 @@ body:has(button:hover) .cursor {
   transform: translateX(4px);
 }
 
+/* ════ VIDEO ════ */
+.video-section {
+  background: var(--bg);
+  text-align: center;
+}
+
+.video-section .section-head {
+  text-align: center;
+}
+
+.video-section .section-desc {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.video-card {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+  transition: transform 0.3s var(--ease);
+}
+
+.video-card:hover {
+  transform: translateY(-8px);
+}
+
+.video-container {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 9 / 16;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s;
+}
+
+.video-card:hover .video-container {
+  box-shadow: 0 20px 60px rgba(212, 150, 42, 0.2);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ════ PROSES ════ */
 .proses-section {
   background: var(--bg);
@@ -1273,21 +1330,26 @@ body:has(button:hover) .cursor {
   text-align: center;
 }
 
-.lokasi-section .section-desc.light {
-  color: var(--text2);
-}
-
-.lokasi-section .section-title {
-  color: var(--cream);
-}
-
-.lokasi-section .section-title em {
-  color: var(--gold);
-  text-decoration: none;
+.lokasi-section .section-desc {
+  margin: 0 auto !important;
+  text-align: center !important;
 }
 
 .lokasi-section .section-eyebrow.light {
-  color: var(--gold-lt);
+  color: var(--gold-lt) !important;
+}
+
+.lokasi-section .section-title {
+  color: var(--cream) !important;
+}
+
+.lokasi-section .section-title em {
+  color: var(--gold) !important;
+  text-decoration: none;
+}
+
+.lokasi-section .section-desc.light {
+  color: var(--text2) !important;
 }
 
 .lokasi-map-wrap {
@@ -1879,6 +1941,10 @@ body:has(button:hover) .cursor {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .lokasi-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1995,6 +2061,10 @@ body:has(button:hover) .cursor {
     height: 360px;
   }
 
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .lokasi-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2039,6 +2109,10 @@ body:has(button:hover) .cursor {
 
 @media (max-width: 600px) {
   .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-grid {
     grid-template-columns: 1fr;
   }
 
